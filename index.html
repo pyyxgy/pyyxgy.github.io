@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="彭瀚晔的个人页面">
-    <title>彭瀚晔的个人页面</title>
-
-    <!-- 引入外部CSS文件 -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我爱张欣悦</title>
+  <link rel="stylesheet" href="style.css"> <!-- 引入外部CSS文件 -->
 </head>
-<body style="color: red;">
-    <div class="heart-container">
-        <main>
-            <section>
-                <p>我是彭瀚晔，我爱张欣悦，我爱张欣悦，我爱张欣悦，我爱张欣悦，我爱张欣悦，我爱张欣悦，我爱张欣悦，我爱张欣悦，我爱张欣悦，我爱张欣悦，我爱张欣悦，我爱张欣悦，我爱张欣悦，我爱张欣悦，我爱张欣悦，我爱张欣悦，我爱张欣悦，我爱张欣悦，我爱张欣悦。</p>
-            </section>
-        </main>
+<body>
 
-        <!-- 通过position绝对定位，形成心形 -->
-        <div class="heart-text text1">我爱张欣悦</div>
-        <div class="heart-text text2">我爱张欣悦</div>
-        <div class="heart-text text3">我爱张欣悦</div>
-        <div class="heart-text text4">我爱张欣悦</div>
-        <div class="heart-text text5">我爱张欣悦</div>
-        <div class="heart-text text6">我爱张欣悦</div>
-        <div class="heart-text text7">我爱张欣悦</div>
-        <div class="heart-text text8">我爱张欣悦</div>
-        <div class="heart-text text9">我爱张欣悦</div>
-        <div class="heart-text text10">我爱张欣悦</div>
-    </div>
+  <div class="container">
+    <!-- 固定显示的“我爱张欣悦” -->
+    <h1>我爱张欣悦</h1>
+
+    <!-- 点击按钮后展示动态表白的区域 -->
+    <div id="loveMessages"></div>
+
+    <!-- 按钮触发动态表白效果 -->
+    <button class="btn" onclick="repeatLove()">点击表白</button>
+  </div>
+
+  <script>
+    // 创建一个函数来重复展示 "我爱张欣悦" 消息
+    function repeatLove() {
+      const loveContainer = document.getElementById("loveMessages");
+      const message = document.createElement("div");
+      message.classList.add("love-message");
+      message.textContent = "我爱张欣悦";
+
+      // 每次点击按钮都会追加新的表白信息
+      loveContainer.appendChild(message);
+
+      // 设置表白效果，轻微浮动
+      setTimeout(function() {
+        message.style.transform = "scale(1.2)";
+        message.style.opacity = "0.8";
+      }, 100);
+
+      // 恢复原始状态
+      setTimeout(function() {
+        message.style.transform = "scale(1)";
+        message.style.opacity = "1";
+      }, 500);
+    }
+  </script>
+
 </body>
 </html>
